@@ -1,56 +1,47 @@
-import {
-  Box,
-  Flex,
-  IconButton,
-  Image,
-  Spacer,
-  Tooltip,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, Flex, Image, Spacer, VStack } from "@chakra-ui/react";
 import logo from "../assets/logo.webp";
-import { EmailIcon, SearchIcon, StarIcon } from "@chakra-ui/icons";
-// import ColorModeSwitch from "./ColorModeSwitch";
-// import SearchInput from "./SearchInput";
-
-// interface Props {
-//   onSearch: (searchText: string) => void;
-// }
+import { StarIcon } from "@chakra-ui/icons";
+import { FaHome, FaSuitcase } from "react-icons/fa";
+import SectionButton from "./SectionButton";
 
 const NavBar = () => {
+  const handleScrollTo = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <Flex direction="column" align="center" height="100vh" padding="10px">
+    <Flex
+      direction="column"
+      align="center"
+      height="100vh"
+      padding="10px"
+      position="fixed"
+      top="0"
+      left="0"
+    >
       <Image src={logo} boxSize="45px" />
       <Spacer />
       <Box>
         {/* Home, About, Projects */}
         <VStack spacing={4}>
-          <Tooltip
+          <SectionButton
             label="Home"
-            placement="right"
-            bg="rgba(0, 29, 50, 0.5)"
-            color="white"
-            borderRadius="7px"
-          >
-            <IconButton aria-label="Search database" icon={<SearchIcon />} />
-          </Tooltip>
-          <Tooltip
+            icon={<FaHome />}
+            onClick={() => handleScrollTo("home")}
+          />
+          <SectionButton
+            label="Skills"
+            icon={<StarIcon />}
+            onClick={() => handleScrollTo("skills")}
+          />
+          <SectionButton
             label="Projects"
-            placement="right"
-            bg="rgba(0, 29, 50, 0.5)"
-            color="white"
-            borderRadius="7px"
-          >
-            <IconButton aria-label="Search database" icon={<StarIcon />} />
-          </Tooltip>
-          <Tooltip
-            label="About"
-            placement="right"
-            bg="rgba(0, 29, 50, 0.5)"
-            color="white"
-            borderRadius="7px"
-          >
-            <IconButton aria-label="Search database" icon={<EmailIcon />} />
-          </Tooltip>
+            icon={<FaSuitcase />}
+            onClick={() => handleScrollTo("projects")}
+          />
         </VStack>
       </Box>
       <Spacer />
