@@ -52,24 +52,48 @@ const Home = () => {
         </Code>
         <Text
           fontSize="70px"
-          paddingLeft="16px"
+          paddingLeft="20px"
           fontFamily="'Pacifico', cursive"
           css={typingAnimation}
         >
           Hi, I'm Lorena
         </Text>
-        <Text
-          fontSize="3xl"
-          paddingLeft="16px"
-          fontFamily="'Roboto', sans-serif"
-        >
-          Frontend Developer
-        </Text>
+
+        <VStack spacing={0} paddingLeft="20px">
+          <Code
+            colorScheme="purple"
+            bg="transparent"
+            fontFamily="'Fira Code', monospace"
+            alignSelf="flex-start"
+            marginBottom="-5px"
+          >
+            &lt;Role&gt;
+          </Code>
+          <Text
+            fontSize="3xl"
+            paddingLeft="20px"
+            fontFamily="'Raleway', sans-serif"
+            letterSpacing={2}
+          >
+            Frontend Developer
+          </Text>
+          <Code
+            colorScheme="purple"
+            bg="transparent"
+            fontFamily="'Fira Code', monospace"
+            alignSelf="flex-start"
+            marginTop="-5px"
+          >
+            &lt;/Role&gt;
+          </Code>
+        </VStack>
+
         <Code
           colorScheme="purple"
           bg="transparent"
           fontFamily="'Fira Code', monospace"
           alignSelf="flex-start"
+          paddingTop="20px"
         >
           &lt;/IntroSection&gt;
         </Code>
