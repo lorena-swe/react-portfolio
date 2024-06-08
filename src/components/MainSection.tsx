@@ -3,6 +3,7 @@ import { Box, VStack } from "@chakra-ui/react";
 import ColorModeSwitch from "./ColorModeSwitch";
 import Socials from "./Socials";
 import ProjectsSection from "./ProjectsSection";
+import Home from "./Home";
 
 const MainSection = () => {
   return (
@@ -16,7 +17,7 @@ const MainSection = () => {
 
         <VStack padding="50px">
           <Box id="home" height="calc(100vh - 50px)" width="100%">
-            Home
+            <Home />
           </Box>
 
           <Box id="skills" height="calc(100vh - 50px)" width="100%">
@@ -27,6 +28,8 @@ const MainSection = () => {
             Projects
             <ProjectsSection />
           </Box>
+
+          {/* <Footer /> */}
         </VStack>
       </Box>
     </>
