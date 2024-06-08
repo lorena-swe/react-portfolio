@@ -15,7 +15,7 @@ const ColorModeSwitch = () => {
       {colorMode === "dark" ? (
         <Icon as={FaMoon} color="gray.200" />
       ) : (
-        <Icon as={FaSun} color="#ebb917" />
+        <Icon as={FaSun} color="gray.900" />
       )}
     </HStack>
   );

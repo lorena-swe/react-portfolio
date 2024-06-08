@@ -1,15 +1,22 @@
-import { Box, Grid, GridItem } from "@chakra-ui/react";
+import { Box, Grid, GridItem, useColorMode } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import MainSection from "./components/MainSection";
-import backgroundImage from "./assets/milad-fakurian-u8Jn2rzYIps-unsplash.jpg";
+import darkThemeImage from "./assets/milad-fakurian-purple-blue.jpg";
+import lightThemeImage from "./assets/milad-fakurian-bubble-drop.jpg";
 
 function App() {
+  const { colorMode } = useColorMode();
+
   return (
     <>
       <Box
         position="relative"
         minHeight="100vh"
-        backgroundImage={`url(${backgroundImage})`}
+        backgroundImage={
+          colorMode === "dark"
+            ? `url(${darkThemeImage})`
+            : `url(${lightThemeImage})`
+        }
         backgroundPosition="center"
         backgroundRepeat="no-repeat"
         backgroundSize="cover"
@@ -21,7 +28,7 @@ function App() {
           left: 0,
           width: "100%",
           height: "100%",
-          backdropFilter: "blur(35px)",
+          backdropFilter: "blur(100px)",
           zIndex: 1,
         }}
       >
