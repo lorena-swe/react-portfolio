@@ -2,6 +2,7 @@
 import { Box, VStack } from "@chakra-ui/react";
 import ColorModeSwitch from "./ColorModeSwitch";
 import Socials from "./Socials";
+import ProjectsSection from "./ProjectsSection";
 
 const MainSection = () => {
   return (
@@ -24,6 +25,7 @@ const MainSection = () => {
 
           <Box id="projects" height="calc(100vh - 50px)" width="100%">
             Projects
+            <ProjectsSection />
           </Box>
         </VStack>
       </Box>
