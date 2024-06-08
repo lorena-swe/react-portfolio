@@ -4,12 +4,15 @@ import { useState, useEffect } from "react";
 
 const Home = () => {
   const [showCaret, setShowCaret] = useState(true);
+  const [showText, setShowText] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    const caretTimer = setTimeout(() => {
       setShowCaret(false);
-    }, 1500); // Match this duration with the typing animation duration
-    return () => clearTimeout(timer);
+      setShowText(true);
+    }, 1500); // This duration matches with the typing animation duration
+
+    return () => clearTimeout(caretTimer);
   }, []);
 
   const typingAnimation = css`
@@ -39,64 +42,95 @@ const Home = () => {
       ${showCaret ? "blink-caret 0.75s step-end infinite" : "none"};
   `;
 
+  const bubbleUpAnimation = css`
+    @keyframes bubbleUp {
+      0% {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    animation: bubbleUp 1s ease-out forwards;
+  `;
+
   return (
     <Flex align="center" justify="center" height="100%">
       <VStack align="start" spacing={4}>
-        <Code
-          colorScheme="purple"
-          bg="transparent"
-          fontFamily="'Fira Code', monospace"
-          alignSelf="flex-start"
-        >
-          &lt;IntroSection&gt;
-        </Code>
+        {showText && (
+          <Code
+            colorScheme="purple"
+            bg="transparent"
+            fontFamily="'Fira Code', monospace"
+            alignSelf="flex-start"
+            fontSize="16px"
+            css={bubbleUpAnimation}
+          >
+            &lt;IntroSection&gt;
+          </Code>
+        )}
+
         <Text
-          fontSize="70px"
-          paddingLeft="20px"
+          fontSize="90px"
+          paddingLeft="30px"
           fontFamily="'Pacifico', cursive"
           css={typingAnimation}
         >
           Hi, I'm Lorena
         </Text>
 
-        <VStack spacing={0} paddingLeft="20px">
-          <Code
-            colorScheme="purple"
-            bg="transparent"
-            fontFamily="'Fira Code', monospace"
-            alignSelf="flex-start"
-            marginBottom="-5px"
-          >
-            &lt;Role&gt;
-          </Code>
-          <Text
-            fontSize="3xl"
-            paddingLeft="20px"
-            fontFamily="'Raleway', sans-serif"
-            letterSpacing={2}
-          >
-            Frontend Developer
-          </Text>
-          <Code
-            colorScheme="purple"
-            bg="transparent"
-            fontFamily="'Fira Code', monospace"
-            alignSelf="flex-start"
-            marginTop="-5px"
-          >
-            &lt;/Role&gt;
-          </Code>
-        </VStack>
+        {showText && (
+          <VStack spacing={0} paddingLeft="30px">
+            <Code
+              colorScheme="purple"
+              bg="transparent"
+              fontFamily="'Fira Code', monospace"
+              alignSelf="flex-start"
+              marginBottom="-5px"
+              fontSize="16px"
+              css={bubbleUpAnimation}
+            >
+              &lt;Role&gt;
+            </Code>
+            <Text
+              fontSize="4xl"
+              paddingLeft="30px"
+              fontFamily="'Raleway', sans-serif"
+              letterSpacing={1}
+              css={bubbleUpAnimation}
+            >
+              Frontend Developer
+            </Text>
+            <Code
+              colorScheme="purple"
+              bg="transparent"
+              fontFamily="'Fira Code', monospace"
+              alignSelf="flex-start"
+              marginTop="-5px"
+              fontSize="16px"
+              css={bubbleUpAnimation}
+            >
+              &lt;/Role&gt;
+            </Code>
+          </VStack>
+        )}
 
-        <Code
-          colorScheme="purple"
-          bg="transparent"
-          fontFamily="'Fira Code', monospace"
-          alignSelf="flex-start"
-          paddingTop="20px"
-        >
-          &lt;/IntroSection&gt;
-        </Code>
+        {showText && (
+          <Code
+            colorScheme="purple"
+            bg="transparent"
+            fontFamily="'Fira Code', monospace"
+            alignSelf="flex-start"
+            paddingTop="20px"
+            fontSize="16px"
+            css={bubbleUpAnimation}
+          >
+            &lt;/IntroSection&gt;
+          </Code>
+        )}
       </VStack>
     </Flex>
   );

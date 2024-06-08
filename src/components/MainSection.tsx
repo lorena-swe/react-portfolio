@@ -4,6 +4,7 @@ import ColorModeSwitch from "./ColorModeSwitch";
 import Socials from "./Socials";
 import ProjectsSection from "./ProjectsSection";
 import Home from "./Home";
+import SkillsSection from "./SkillsSection";
 
 const MainSection = () => {
   return (
@@ -21,7 +22,7 @@ const MainSection = () => {
           </Box>
 
           <Box id="skills" height="calc(100vh - 50px)" width="100%">
-            Skills
+            <SkillsSection />
           </Box>
 
           <Box id="projects" height="calc(100vh - 50px)" width="100%">
