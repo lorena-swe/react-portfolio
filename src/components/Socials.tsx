@@ -24,31 +24,32 @@ const Socials = () => {
   };
 
   return (
-    <Box position="fixed" bottom="100px" right="10px">
-      <VStack spacing={2}>
+    <Box position="fixed" bottom="10px" right="10px">
+      <VStack spacing={0}>
         <SocialsButton
           label="GitHub"
           icon={<FaGithub fontSize="20px" />}
-          href="https://github.com"
+          href="https://github.com/lorena-swe"
         />
         <SocialsButton
           label="LinkedIn"
           icon={<FaLinkedin fontSize="20px" />}
-          href="https://www.linkedin.com"
+          href="https://www.linkedin.com/in/lorena-zotaj/"
         />
         <SocialsButton
           label="Email"
           icon={<EmailIcon fontSize="20px" />}
           onClick={handleEmailClick}
         />
-      </VStack>
 
-      <Divider
-        orientation="vertical"
-        height="50px"
-        borderColor={dividerColor}
-        borderWidth="2px"
-      />
+        <Divider
+          orientation="vertical"
+          height="100px"
+          borderWidth="1px"
+          borderColor={dividerColor}
+          marginTop="10px"
+        />
+      </VStack>
     </Box>
   );
 };
