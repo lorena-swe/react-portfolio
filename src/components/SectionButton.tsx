@@ -1,4 +1,9 @@
-import { IconButton, Tooltip } from "@chakra-ui/react";
+import {
+  Button,
+  IconButton,
+  useBreakpointValue,
+  Tooltip,
+} from "@chakra-ui/react";
 import { ReactElement } from "react";
 
 interface Props {
@@ -8,16 +13,29 @@ interface Props {
 }
 
 const SectionButton = ({ label, icon, onClick }: Props) => {
+  const isMobile = useBreakpointValue({ base: true, md: false });
+
   return (
-    <Tooltip
-      label={label}
-      placement="right"
-      bg="rgba(0, 29, 50, 0.5)"
-      color="white"
-      borderRadius="7px"
-    >
-      <IconButton aria-label={label} icon={icon} onClick={onClick} />
-    </Tooltip>
+    <>
+      {isMobile ? (
+        <Button
+          leftIcon={icon}
+          onClick={onClick}
+          variant="ghost"
+          justifyContent="flex-start"
+          width="100%"
+          aria-label={label}
+          fontSize="xl"
+          margin="10px 0"
+        >
+          {label}
+        </Button>
+      ) : (
+        <Tooltip label={label} placement="right" borderRadius="7px">
+          <IconButton aria-label={label} icon={icon} onClick={onClick} />
+        </Tooltip>
+      )}
+    </>
   );
 };
 

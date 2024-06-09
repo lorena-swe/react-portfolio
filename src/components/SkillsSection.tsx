@@ -1,4 +1,4 @@
-import { Grid, Box, VStack, Text, Code, Tooltip } from "@chakra-ui/react";
+import { Grid, Box, VStack, Text, Code, Tooltip, Flex } from "@chakra-ui/react";
 import {
   FaReact,
   FaPython,
@@ -92,18 +92,24 @@ const SkillsSection = () => {
         */
       </Code>
       <Grid
-        templateColumns="repeat(auto-fit, minmax(120px, 1fr))"
+        templateColumns={{
+          base: "repeat(3, 1fr)",
+          md: "repeat(4, 1fr)",
+          lg: "repeat(6, 1fr)",
+        }}
         gap={6}
         width="100%"
         padding="0 35px"
       >
         {skills.map((skill) => (
           <Box key={skill.name} textAlign="center">
-            <Tooltip label={skill.name} placement="top">
-              <Box fontSize="5xl" color={skill.color}>
-                <skill.icon />
-              </Box>
-            </Tooltip>
+            <Flex align="center" justify="center">
+              <Tooltip label={skill.name} placement="top">
+                <Box fontSize={{ base: "3xl", md: "5xl" }} color={skill.color}>
+                  <skill.icon />
+                </Box>
+              </Tooltip>
+            </Flex>
           </Box>
         ))}
       </Grid>

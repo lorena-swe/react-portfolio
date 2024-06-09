@@ -20,13 +20,7 @@ const SocialsButton = ({ label, icon, href, onClick }: Props) => {
   );
 
   return (
-    <Tooltip
-      label={label}
-      placement="left"
-      bg="rgba(0, 29, 50, 0.5)"
-      color="white"
-      borderRadius="7px"
-    >
+    <Tooltip label={label} placement="left" borderRadius="7px">
       {href ? (
         <Link href={href} isExternal>
           {button}
