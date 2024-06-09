@@ -1,14 +1,21 @@
-import { Box, Grid, GridItem, useColorMode } from "@chakra-ui/react";
+import {
+  ChakraProvider,
+  Box,
+  Grid,
+  GridItem,
+  useColorMode,
+} from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import MainSection from "./components/MainSection";
 import darkThemeImage from "./assets/milad-fakurian-purple-blue.jpg";
 import lightThemeImage from "./assets/milad-fakurian-bubble-drop.jpg";
+import theme from "./theme";
 
 function App() {
   const { colorMode } = useColorMode();
 
   return (
-    <>
+    <ChakraProvider theme={theme}>
       <Box
         position="relative"
         minHeight="100vh"
@@ -53,7 +60,7 @@ function App() {
           </GridItem>
         </Grid>
       </Box>
-    </>
+    </ChakraProvider>
   );
 }
 

@@ -11,7 +11,6 @@ const ColorModeSwitch = () => {
         isChecked={colorMode === "dark"}
         onChange={toggleColorMode}
       />
-      {/* <Text whiteSpace="nowrap">Dark Mode</Text> */}
       {colorMode === "dark" ? (
         <Icon as={FaMoon} color="gray.200" />
       ) : (
