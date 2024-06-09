@@ -19,6 +19,7 @@ import {
 } from "@chakra-ui/react";
 import { FaCode, FaEye } from "react-icons/fa";
 import { useState } from "react";
+import "./ProjectCard.css";
 
 export interface Project {
   name: string;
@@ -64,7 +65,16 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
         boxShadow: "inset 0 0 100px rgba(0, 0, 0, 0.4)",
       }}
     >
-      <Flex align="center" justify="center" height="100%" padding="65px">
+      <Flex
+        align="center"
+        justify="center"
+        height="100%"
+        padding="65px"
+        transition="transform 0.3s ease"
+        _hover={{
+          transform: "scale(1.1)",
+        }}
+      >
         <Image
           src={project.image}
           alt={project.name}
@@ -100,8 +110,8 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
             maxWidth={["90vw", "80vw", "70vw"]}
             maxHeight="80vh"
             display="flex"
-            flexDirection="column"
-            m="auto" // Ensures margin auto for top and bottom
+            justifyContent="center"
+            alignItems="center"
           >
             <ModalCloseButton />
             <ModalBody display="flex" flexDirection="column" height="100%">
@@ -111,7 +121,6 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
                   justify="center"
                   maxHeight="100%"
                   maxWidth="100%"
-                  padding="20px"
                 >
                   <Image
                     src={project.gif || project.image}
@@ -149,8 +158,16 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
                       ))}
                     </Box>
                   </Box>
-                  <Box flex="1" mt={4} overflowY="auto">
-                    <Text>{project.about}</Text>
+                  <Box
+                    flex="1"
+                    mt={4}
+                    overflowY="auto"
+                    maxHeight="40vh"
+                    className="custom-scrollbar"
+                  >
+                    <Text style={{ whiteSpace: "pre-line" }}>
+                      {project.about}
+                    </Text>
                   </Box>
                   <HStack mt={4} justifyContent="flex-start">
                     {project.demoLink ? (
