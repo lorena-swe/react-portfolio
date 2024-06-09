@@ -25,7 +25,7 @@ const MainSection = () => {
             <SkillsSection />
           </Box>
 
-          <Box id="projects" height="calc(100vh - 50px)" width="100%">
+          <Box id="projects" minHeight="100vh" width="100%">
             Projects
             <ProjectsSection />
           </Box>

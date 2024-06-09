@@ -98,18 +98,29 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
         >
           <ModalContent
             maxWidth={["90vw", "80vw", "70vw"]}
-            height="60vh"
-            marginY="auto"
+            maxHeight="80vh"
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
           >
             <ModalCloseButton />
-            <ModalBody display="flex" flexDirection="column" height="100%">
+            <ModalBody
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+            >
               <Grid height="100%" templateColumns="3fr 2fr" gap={4}>
-                <Flex align="center" justify="center" height="100%">
+                <Flex
+                  align="center"
+                  justify="center"
+                  maxHeight="100%"
+                  maxWidth="100%"
+                >
                   <Image
                     src={project.gif || project.image}
                     alt={project.name}
-                    width="95%"
                     maxHeight="100%"
+                    objectFit="contain"
                     borderRadius="5px"
                   />
                 </Flex>

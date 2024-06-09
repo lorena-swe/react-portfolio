@@ -14,8 +14,8 @@ const Socials = () => {
   const handleEmailClick = () => {
     onCopy();
     toast({
-      title: "Email address copied.",
-      description: `Copied! (${emailAddress})`,
+      title: "Email address copied!",
+      description: emailAddress,
       status: "success",
       duration: 3000,
       isClosable: true,
