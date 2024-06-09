@@ -58,7 +58,14 @@ const Home = () => {
   `;
 
   return (
-    <Flex align="center" justify="center" height="100%">
+    <Flex
+      align="center"
+      justify="center"
+      height="100%"
+      maxWidth="100%"
+      padding="20px"
+      overflowX="hidden" // Prevent horizontal overflow
+    >
       <VStack align="start" spacing={4}>
         {showText && (
           <Code
@@ -66,7 +73,7 @@ const Home = () => {
             bg="transparent"
             fontFamily="'Fira Code', monospace"
             alignSelf="flex-start"
-            fontSize="16px"
+            fontSize={{ base: "12px", md: "16px" }}
             css={bubbleUpAnimation}
           >
             &lt;IntroSection&gt;
@@ -74,8 +81,8 @@ const Home = () => {
         )}
 
         <Text
-          fontSize="90px"
-          paddingLeft="30px"
+          fontSize={{ base: "40px", md: "70px", lg: "90px" }}
+          paddingLeft={{ base: "10px", md: "20px", lg: "30px" }}
           fontFamily="'Pacifico', cursive"
           css={typingAnimation}
         >
@@ -83,21 +90,24 @@ const Home = () => {
         </Text>
 
         {showText && (
-          <VStack spacing={0} paddingLeft="30px">
+          <VStack
+            spacing={0}
+            paddingLeft={{ base: "10px", md: "20px", lg: "30px" }}
+          >
             <Code
               colorScheme="purple"
               bg="transparent"
               fontFamily="'Fira Code', monospace"
               alignSelf="flex-start"
               marginBottom="-5px"
-              fontSize="16px"
+              fontSize={{ base: "12px", md: "16px" }}
               css={bubbleUpAnimation}
             >
               &lt;Role&gt;
             </Code>
             <Text
-              fontSize="4xl"
-              paddingLeft="30px"
+              fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}
+              paddingLeft={{ base: "10px", md: "20px", lg: "30px" }}
               fontFamily="'Raleway', sans-serif"
               letterSpacing={1}
               css={bubbleUpAnimation}
@@ -110,7 +120,7 @@ const Home = () => {
               fontFamily="'Fira Code', monospace"
               alignSelf="flex-start"
               marginTop="-5px"
-              fontSize="16px"
+              fontSize={{ base: "12px", md: "16px" }}
               css={bubbleUpAnimation}
             >
               &lt;/Role&gt;
@@ -125,7 +135,7 @@ const Home = () => {
             fontFamily="'Fira Code', monospace"
             alignSelf="flex-start"
             paddingTop="20px"
-            fontSize="16px"
+            fontSize={{ base: "12px", md: "16px" }}
             css={bubbleUpAnimation}
           >
             &lt;/IntroSection&gt;

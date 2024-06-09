@@ -24,7 +24,7 @@ const Socials = () => {
   };
 
   return (
-    <Box position="fixed" bottom="10px" right="10px">
+    <Box position="fixed" bottom="10px" right="10px" zIndex="99">
       <VStack spacing={0}>
         <SocialsButton
           label="GitHub"

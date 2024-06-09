@@ -1,4 +1,4 @@
-import { Grid, GridItem } from "@chakra-ui/react";
+import { Grid, GridItem, VStack, Text } from "@chakra-ui/react";
 import ProjectCard from "./ProjectCard";
 import { Project } from "./ProjectCard";
 import dummyImage from "../assets/game-hub-thumbnail.png";
@@ -80,19 +80,33 @@ const projects: Project[] = [
 
 const ProjectsSection = () => {
   return (
-    <Grid
-      templateColumns="repeat(2, 1fr)"
-      templateRows="repeat(2, 1fr)"
-      gap={12}
-      padding="20px 150px"
+    <VStack
+      align="center"
+      spacing={6}
+      padding={{ base: "20px", md: "50px" }}
+      textAlign="center"
     >
-      {projects.map((project, index) => (
-        <GridItem key={index}>
-          <ProjectCard project={project} />
-        </GridItem>
-      ))}
-    </Grid>
+      <Text
+        fontSize={{ base: "2xl", md: "4xl" }}
+        fontWeight="bold"
+        fontFamily="'Pacifico', cursive"
+        letterSpacing={3}
+      >
+        Projects
+      </Text>
+      <Grid
+        templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
+        gap={{ base: 6, md: 12 }}
+        width="100%"
+        padding={{ base: "20px 20px", md: "20px 50px", lg: "20px 150px" }}
+      >
+        {projects.map((project, index) => (
+          <GridItem key={index}>
+            <ProjectCard project={project} />
+          </GridItem>
+        ))}
+      </Grid>
+    </VStack>
   );
 };
-
 export default ProjectsSection;

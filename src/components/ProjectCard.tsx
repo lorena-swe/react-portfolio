@@ -50,7 +50,7 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
       overflow="hidden"
       borderRadius="md"
       boxShadow="lg"
-      height="300px"
+      height={{ base: "200px", sm: "250px", md: "300px" }}
       bg={project.background || "#343a41"}
       backgroundSize="cover"
       backgroundPosition="center"
@@ -170,7 +170,7 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
                     overflowY="auto"
                     className="custom-scrollbar"
                     padding="10px 15px 15px 0"
-                    maxHeight={{ base: "calc(80vh - 300px)", lg: "40vh" }} // Ensure it takes available space and is scrollable
+                    maxHeight={{ base: "calc(80vh - 300px)", lg: "40vh" }}
                   >
                     <Text style={{ whiteSpace: "pre-line" }}>
                       {project.about}
