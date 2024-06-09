@@ -23,6 +23,7 @@ export interface Project {
   name: string;
   image: string;
   gif?: string;
+  background?: string;
   tags: string[];
   about: string;
   demoLink?: string;
@@ -43,16 +44,17 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
       borderRadius="md"
       boxShadow="lg"
       height="300px"
-      bg="black"
+      bg={project.background || "#343a41"}
+      backgroundSize="cover"
+      backgroundPosition="center"
       cursor="pointer"
     >
-      <Flex align="center" justify="center" height="100%">
+      <Flex align="center" justify="center" height="100%" padding="65px">
         <Image
           src={project.image}
           alt={project.name}
-          objectFit="cover"
-          width="100%"
-          height="100%"
+          width="auto"
+          maxHeight="100%"
           onClick={onOpen}
         />
       </Flex>
@@ -106,14 +108,16 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
                     <Box mt={2}>
                       {project.tags.map((tag) => (
                         <Tag
-                          size="sm"
+                          size="md"
                           key={tag}
-                          borderRadius="full"
+                          borderRadius="4px"
                           variant="solid"
                           colorScheme="purple"
-                          marginRight="8px"
+                          margin="0 8px 8px 0"
                         >
-                          <TagLabel>{tag}</TagLabel>
+                          <TagLabel fontFamily="'Fira Code', monospace">
+                            {tag}
+                          </TagLabel>
                         </Tag>
                       ))}
                     </Box>
@@ -128,7 +132,7 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
                         as="a"
                         href={project.demoLink}
                         target="_blank"
-                        colorScheme="blue"
+                        colorScheme="purple"
                         leftIcon={<FaEye />}
                       >
                         View Demo
@@ -142,7 +146,7 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
                       as="a"
                       href={project.codeLink}
                       target="_blank"
-                      colorScheme="blue"
+                      colorScheme="purple"
                       leftIcon={<FaCode />}
                     >
                       Code

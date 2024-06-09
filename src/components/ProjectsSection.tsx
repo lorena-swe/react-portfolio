@@ -3,11 +3,25 @@ import ProjectCard from "./ProjectCard";
 import { Project } from "./ProjectCard";
 import dummyImage from "../assets/game-hub-thumbnail.png";
 
+import gameHubLogo from "../assets/logo.webp";
+import gameHubBg from "../assets/GameHubBg.png";
+
+import lemonLogo from "../assets/LittleLemonLogo.png";
+
+import spaceLogo from "../assets/SpaceAdventuresLogo.png";
+import spaceGif from "../assets/spaceAdventures(gif).gif";
+import spaceBg from "../assets/New Project.jpg";
+
+import sortLogo from "../assets/SortingVisualizerLogo.png";
+import sortGif from "../assets/sortingVisualizer_thumbnail.gif";
+import sortBg from "../assets/florian-olivo-JNz9bQD3Oio-unsplash.jpg";
+
 const projects: Project[] = [
   {
     name: "Game Hub",
-    image: dummyImage,
+    image: gameHubLogo,
     gif: dummyImage,
+    background: `url(${gameHubBg})`,
     tags: [
       "React",
       "TypeScript",
@@ -22,8 +36,9 @@ const projects: Project[] = [
   },
   {
     name: "Little Lemon Restaurant",
-    image: dummyImage,
+    image: lemonLogo,
     gif: dummyImage,
+    background: "#495e57",
     tags: [
       "React",
       "JavaScript",
@@ -39,16 +54,18 @@ const projects: Project[] = [
   },
   {
     name: "Sorting Visualizer",
-    image: dummyImage,
-    gif: dummyImage,
+    image: sortLogo,
+    gif: sortGif,
+    background: `url(${sortBg})`,
     tags: ["Python", "TKinter"],
     about: "This is a detailed description of Project 2.",
     codeLink: "https://github.com/lorena-swe/SortingVisualizer",
   },
   {
     name: "Space Adventures",
-    image: dummyImage,
-    gif: dummyImage,
+    image: spaceLogo,
+    gif: spaceGif,
+    background: `url(${spaceBg})`,
     tags: ["Python", "Pygame"],
     about: "This is a detailed description of Project 2.",
     codeLink: "https://github.com/lorena-swe/SpaceAdventures",
