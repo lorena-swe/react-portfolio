@@ -115,12 +115,18 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
           >
             <ModalCloseButton />
             <ModalBody display="flex" flexDirection="column" height="100%">
-              <Grid height="100%" templateColumns="3fr 2fr" gap={4}>
+              <Grid
+                height="100%"
+                templateColumns={{ base: "1fr", lg: "3fr 2fr" }}
+                templateRows={{ base: "auto auto", lg: "1fr" }}
+                gap={4}
+              >
                 <Flex
                   align="center"
                   justify="center"
                   maxHeight="100%"
                   maxWidth="100%"
+                  display={{ base: "none", lg: "flex" }} // Hide image on mobile
                 >
                   <Image
                     src={project.gif || project.image}
@@ -162,8 +168,9 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
                     flex="1"
                     mt={4}
                     overflowY="auto"
-                    maxHeight="40vh"
                     className="custom-scrollbar"
+                    padding="10px 15px 15px 0"
+                    maxHeight={{ base: "calc(80vh - 300px)", lg: "40vh" }} // Ensure it takes available space and is scrollable
                   >
                     <Text style={{ whiteSpace: "pre-line" }}>
                       {project.about}
