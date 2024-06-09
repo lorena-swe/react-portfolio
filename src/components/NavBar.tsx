@@ -1,5 +1,5 @@
 import { Box, Flex, Image, Spacer, VStack } from "@chakra-ui/react";
-import logo from "../assets/logo.webp";
+import logo from "../assets/rubber-duck.png";
 import { StarIcon } from "@chakra-ui/icons";
 import { FaHome, FaSuitcase } from "react-icons/fa";
 import SectionButton from "./SectionButton";
@@ -22,7 +22,12 @@ const NavBar = () => {
       top="0"
       left="0"
     >
-      <Image src={logo} boxSize="45px" />
+      <Image
+        src={logo}
+        boxSize="40px"
+        cursor="pointer"
+        onClick={() => handleScrollTo("home")}
+      />
       <Spacer />
       <Box>
         {/* Home, About, Projects */}

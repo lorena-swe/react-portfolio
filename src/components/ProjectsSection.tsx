@@ -4,6 +4,7 @@ import { Project } from "./ProjectCard";
 import dummyImage from "../assets/game-hub-thumbnail.png";
 
 import gameHubLogo from "../assets/logo.webp";
+import gameHubDemoGif from "../assets/gameHubDemoGif.gif";
 import gameHubBg from "../assets/GameHubBg.png";
 
 import lemonLogo from "../assets/LittleLemonLogo.png";
@@ -20,14 +21,15 @@ const projects: Project[] = [
   {
     name: "Game Hub",
     image: gameHubLogo,
-    gif: dummyImage,
+    gif: gameHubDemoGif,
     background: `url(${gameHubBg})`,
     tags: [
       "React",
       "TypeScript",
-      "rawg API",
+      "RAWG.io API",
       "Chakra UI",
       "Responsive",
+      "CSS-in-JS",
       "UI/UX",
     ],
     about: "This is a detailed description of Project 1.",

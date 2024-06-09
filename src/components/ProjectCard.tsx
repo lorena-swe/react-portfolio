@@ -18,6 +18,7 @@ import {
   ModalCloseButton,
 } from "@chakra-ui/react";
 import { FaCode, FaEye } from "react-icons/fa";
+import { useState } from "react";
 
 export interface Project {
   name: string;
@@ -36,6 +37,11 @@ interface Props {
 
 const ProjectCard: React.FC<Props> = ({ project }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [isButtonVisible, setIsButtonVisible] = useState(false);
+
+  const handleClick = () => {
+    setIsButtonVisible(!isButtonVisible);
+  };
 
   return (
     <Box
@@ -48,6 +54,15 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
       backgroundSize="cover"
       backgroundPosition="center"
       cursor="pointer"
+      onClick={handleClick}
+      onMouseEnter={() => setIsButtonVisible(true)}
+      onMouseLeave={() => setIsButtonVisible(false)}
+      _hover={{
+        boxShadow: "inset 0 0 100px rgba(0, 0, 0, 0.4)",
+      }}
+      _focus={{
+        boxShadow: "inset 0 0 100px rgba(0, 0, 0, 0.4)",
+      }}
     >
       <Flex align="center" justify="center" height="100%" padding="65px">
         <Image
@@ -58,7 +73,11 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
           onClick={onOpen}
         />
       </Flex>
-      <Flex align="center" justify="center">
+      <Flex
+        align="center"
+        justify="center"
+        display={isButtonVisible ? "flex" : "none"}
+      >
         <Button
           size="sm"
           position="absolute"
