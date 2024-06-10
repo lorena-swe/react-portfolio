@@ -1,13 +1,13 @@
 import { Grid, GridItem, VStack, Text } from "@chakra-ui/react";
 import ProjectCard from "./ProjectCard";
 import { Project } from "./ProjectCard";
-import dummyImage from "../assets/game-hub-thumbnail.png";
 
 import gameHubLogo from "../assets/logo.webp";
 import gameHubDemoGif from "../assets/gameHubDemoGif.gif";
 import gameHubBg from "../assets/GameHubBg.png";
 
 import lemonLogo from "../assets/LittleLemonLogo.png";
+import lemonDemoGif from "../assets/LittleLemonDemoGif.gif";
 
 import spaceLogo from "../assets/SpaceAdventuresLogo.png";
 import spaceGif from "../assets/spaceAdventures(gif).gif";
@@ -40,7 +40,7 @@ const projects: Project[] = [
   {
     name: "Little Lemon Restaurant",
     image: lemonLogo,
-    gif: dummyImage,
+    gif: lemonDemoGif,
     background: "#495e57",
     tags: [
       "React",
