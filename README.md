@@ -6,7 +6,7 @@
     <img src="src/assets/rubber-duck.png" alt="Logo" height="70px" width="auto" >
   </a>
   
-  <h3 align="center">Portfolio</h3>
+  <h3 align="center">Personal Portfolio</h3>
   
   <br />
 
