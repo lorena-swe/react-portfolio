@@ -3,7 +3,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/lorena-swe/react-portfolio">
-    <img src="src/assets/rubber-duck.png" alt="Logo"  width="150" height="auto" >
+    <img src="src/assets/rubber-duck.png" alt="Logo" height="70px" width="auto" >
   </a>
   
   <h3 align="center">Portfolio</h3>
@@ -11,7 +11,7 @@
   <br />
 
   <p align="center">
-    <a href="https://lorena-swe-portfolio.vercel.app/" target="_blank">View Website</a>
+    <a href="https://lorena-swe-portfolio.vercel.app/">View Website</a>
     ·
     <a href="https://github.com/lorena-swe/react-portfolio">Code</a>
   </p>
@@ -22,11 +22,11 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-<!--
-   <a href="https://github.com/Fav8/groupay">
-    <img src="client/groupay-client/src/img/groupay_screen2.png">
+<p align="center">
+   <a href="https://lorena-swe-portfolio.vercel.app/">
+    <img src="src/assets/PortfolioDemoGif.gif">
   </a>
--->
+</p>
 
 A fully responsive personal portfolio, displaying all my tech & tools, as well as the pet projects I'm most proud of.
 Plus, a little touch of web design, which is something I really love and appreaciate!
