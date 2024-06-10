@@ -7,9 +7,6 @@
   </a>
   
   <h3 align="center">Personal Portfolio</h3>
-  
-  <br />
-
   <p align="center">
     <a href="https://lorena-swe-portfolio.vercel.app/">View Website</a>
     ·
