@@ -2,6 +2,10 @@ import { Grid, GridItem, VStack, Text } from "@chakra-ui/react";
 import ProjectCard from "./ProjectCard";
 import { Project } from "./ProjectCard";
 
+import issueTrackerLogo from "../assets/debugging.png";
+import issueTrackerGif from "../assets/IssueTrackerGif_20s.gif";
+import issueTrackerBg from "../assets/pexels-goumbik-669623.jpg";
+
 import gameHubLogo from "../assets/logo.webp";
 import gameHubDemoGif from "../assets/gameHubDemoGif.gif";
 import gameHubBg from "../assets/GameHubBg.png";
@@ -18,6 +22,28 @@ import sortGif from "../assets/sortingVisualizer_thumbnail.gif";
 import sortBg from "../assets/florian-olivo-JNz9bQD3Oio-unsplash.jpg";
 
 const projects: Project[] = [
+  {
+    name: "Issue Tracker",
+    image: issueTrackerLogo,
+    gif: issueTrackerGif,
+    background: `url(${issueTrackerBg})`,
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "React",
+      "NextAuth.js",
+      "Radix UI",
+      "HTML",
+      "CSS",
+      "Tailwind CSS",
+      "Prisma",
+      "MySQL",
+    ],
+    about:
+      "Issue Tracker is a web application designed to help teams manage and track issues efficiently. The app features a comprehensive dashboard for viewing the latest issues, a bar chart categorizing issues by their status (Open, In Progress, Closed), and an issue list page where all issues can be viewed and managed.",
+    demoLink: "https://lorena-swe-issue-tracker.vercel.app/",
+    codeLink: "https://github.com/lorena-swe/issue-tracker",
+  },
   {
     name: "Game Hub",
     image: gameHubLogo,

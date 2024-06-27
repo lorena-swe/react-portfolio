@@ -186,7 +186,7 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
                         colorScheme="purple"
                         leftIcon={<FaEye />}
                       >
-                        View Demo
+                        View Website
                       </Button>
                     ) : (
                       <div></div>
