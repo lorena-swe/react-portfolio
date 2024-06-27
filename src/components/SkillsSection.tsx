@@ -105,8 +105,22 @@ const SkillsSection = () => {
           <Box key={skill.name} textAlign="center">
             <Flex align="center" justify="center">
               <Tooltip label={skill.name} placement="top">
-                <Box fontSize={{ base: "3xl", md: "5xl" }} color={skill.color}>
-                  <skill.icon />
+                <Box
+                  fontSize={{ base: "3xl", md: "5xl" }}
+                  color={skill.color}
+                  bg="#fff"
+                  borderRadius="15px"
+                  width="70px"
+                  height="70px"
+                >
+                  <Flex
+                    width="100%"
+                    height="100%"
+                    align="center"
+                    justify="center"
+                  >
+                    <skill.icon />
+                  </Flex>
                 </Box>
               </Tooltip>
             </Flex>
